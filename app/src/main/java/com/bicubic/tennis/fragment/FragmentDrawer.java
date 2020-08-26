@@ -1,0 +1,241 @@
+package com.bicubic.tennis.fragment;
+
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+import android.view.GestureDetector;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+import com.bicubic.tennis.R;
+import com.bicubic.tennis.activity.SigninActivity;
+import com.bicubic.tennis.adapter.NavigationDrawerAdapter;
+import com.bicubic.tennis.model.NavDrawerItem;
+import com.bicubic.tennis.utils.SharedPreferenceManager;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class FragmentDrawer extends Fragment {
+
+    private static String TAG = FragmentDrawer.class.getSimpleName();
+
+    private RecyclerView recyclerView;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerLayout mDrawerLayout;
+    private NavigationDrawerAdapter adapter;
+    private View containerView;
+    private static String[] titles = null;
+    private static int[] ic_nav_drw = {R.drawable.ic_setting, R.drawable.ic_map, R.drawable.ic_setting, R.drawable.ic_setting, R.drawable.ic_map, R.drawable.ic_setting, R.drawable.ic_setting, R.drawable.ic_map, R.drawable.ic_setting, R.drawable.ic_setting, R.drawable.ic_map, R.drawable.ic_setting, R.drawable.ic_setting};
+    private FragmentDrawerListener drawerListener;
+    public static ImageView profile;
+    public static TextView tv_username;
+    GoogleApiClient mGoogleApiClient;
+
+    public FragmentDrawer() {
+
+    }
+
+    public void setDrawerListener(FragmentDrawerListener listener) {
+        this.drawerListener = listener;
+    }
+
+    public static List<NavDrawerItem> getData() {
+        List<NavDrawerItem> data = new ArrayList<>();
+
+        // preparing navigation drawer items
+        for (int i = 0; i < titles.length; i++) {
+            NavDrawerItem navItem = new NavDrawerItem();
+            navItem.setTitle(titles[i]);
+            navItem.setIcon(ic_nav_drw[i]);
+            data.add(navItem);
+        }
+        return data;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // drawer labels
+        titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflating view layout
+        View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
+
+        profile = (ImageView) layout.findViewById(R.id.profile);
+        tv_username = (TextView) layout.findViewById(R.id.tv_username);
+
+        String username = SharedPreferenceManager.getDefaults("username",getActivity());
+        String profile_pic = SharedPreferenceManager.getDefaults("profile_pic",getActivity());
+        String email = SharedPreferenceManager.getDefaults("email",getActivity());
+
+//        Picasso.with(getActivity())
+////                .load(profile_pic)
+////                .fit()
+////                .placeholder(R.drawable.ic_profile)
+////                .into(profile);
+
+        tv_username.setText(username);
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                GPlusSignOut();
+
+            }
+        });
+
+        adapter = new NavigationDrawerAdapter(getActivity(), getData());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                drawerListener.onDrawerItemSelected(view, position);
+                mDrawerLayout.closeDrawer(containerView);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+        return layout;
+    }
+
+    private void GPlusSignOut() {
+        if (mGoogleApiClient != null && mGoogleApiClient.isConnected())  {
+            Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                    new ResultCallback<Status>() {
+                        @Override
+                        public void onResult(@NonNull Status status) {
+                            mGoogleApiClient.disconnect();
+                            startActivity(new Intent(getActivity(),SigninActivity.class));
+
+                            Toast.makeText(getActivity(), "Logout successful", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }
+
+    }
+
+    public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
+        containerView = getActivity().findViewById(fragmentId);
+        mDrawerLayout = drawerLayout;
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getActivity().invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                getActivity().invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                toolbar.setAlpha(1 - slideOffset / 2);
+            }
+        };
+
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                mDrawerToggle.syncState();
+            }
+        });
+
+    }
+
+    public static interface ClickListener {
+        public void onClick(View view, int position);
+
+        public void onLongClick(View view, int position);
+    }
+
+    static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
+
+        private GestureDetector gestureDetector;
+        private ClickListener clickListener;
+
+        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final ClickListener clickListener) {
+            this.clickListener = clickListener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null && clickListener != null) {
+                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
+                    }
+                }
+            });
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
+                clickListener.onClick(child, rv.getChildPosition(child));
+            }
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+        }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
+
+
+    }
+
+    public interface FragmentDrawerListener {
+        public void onDrawerItemSelected(View view, int position);
+    }
+}

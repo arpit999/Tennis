@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right|top"
+        android:translationZ="2dp"
+        android:background="@drawable/close"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_margin="30dp">
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_main"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/roger" />
+
+            <LinearLayout
+                android:id="@+id/rel_btns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="29dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_facebook"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/facebook" />
+
+                <Button
+                    android:id="@+id/bt_twitter"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/twitter" />
+
+                <Button
+                    android:id="@+id/bt_share"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/share" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="5dp"
+                android:padding="4dp"
+                android:background="@color/black"
+                android:text="10 hrs ago"
+                android:textColor="@android:color/white" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame_layout"
+            android:layout_margin="15dp"
+            android:textColor="@color/black_light"
+            android:text="Roger uses crowd to help him beat Tsonga at Wimbledon  "
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/waste" />
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</FrameLayout>

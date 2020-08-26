@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="15dp">
+
+    <TextView
+        android:id="@+id/textDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:text="ARE YOU SURE WANT TO SIGN OUT?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:id="@+id/lrbt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDialog"
+        android:layout_margin="30dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_dialog_Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_effect"
+            android:text="YES"
+            android:textColor="#ffffff"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_dialog_no"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_effect"
+            android:text="NO"
+            android:textColor="#ffffff"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

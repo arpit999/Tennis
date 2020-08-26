@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:progressDrawable="@drawable/circuler_progress_view"
+        android:translationZ="2dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/buttons_effect"
+            android:text="Live"
+            android:textColor="@color/white" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttons_effect"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Completed"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lin"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/playerone_dark"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/linearLayout"
+                android:layout_toStartOf="@+id/linearLayout"
+                android:padding="5dp"
+                android:text="M. Raonic (CAN) [6]"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/black_light" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/live_middle_light"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/linearLayout2"
+                android:layout_toStartOf="@+id/linearLayout2"
+                android:padding="5dp"
+                android:text="pts"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    style="@style/tv_live_pts"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live_pts"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live_pts"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live_pts"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live_pts"
+                    android:text="5" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/playerone_dark"
+            android:padding="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/linearLayout3"
+                android:layout_toStartOf="@+id/linearLayout3"
+                android:padding="5dp"
+                android:text="M. Raonic (CAN) [6]"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/black_light" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/tv_live"
+                    android:text="5" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/live_middle_light">
+
+            <TextView
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MATCH COMPLETED" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

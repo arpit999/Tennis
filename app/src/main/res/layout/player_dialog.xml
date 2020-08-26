@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lin_player_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/nadal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ANDY Murray"
+                        android:singleLine="true"
+                        android:textColor="@color/black_dark"
+                        android:textSize="25sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Age 29" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:singleLine="true"
+                            android:text="(1984.05.15)" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Weight 185ibg" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:singleLine="true"
+                            android:text="(84kg)" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Height 6'4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:singleLine="true"
+                            android:text="(191cm)" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:id="@+id/lin_grid_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin_player_profile"
+                android:background="@android:color/darker_gray"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/border_size"
+                android:paddingRight="@dimen/border_size">
+
+                <TextView
+                    android:id="@+id/tv_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="4dp"
+                    android:text="AS OF 2016.06.27"
+                    android:textColor="@color/white" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_heading"
+                    app:columnCount="5"
+                    app:rowCount="2">
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2016\nCareer"
+                        app:layout_columnWeight="1"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        app:layout_rowSpan="2"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rank\n2"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Move\n-"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="33-6\nW-L"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2\nTITLES"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2\nCAREER HIGH 2009.08.17"
+                        app:layout_columnSpan="2"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="58-171\nW-L"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:padding="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="37\nTITLES"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_latest_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin_grid_one"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="Latest Result"
+                android:textColor="@color/black_dark"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_latest_result"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Fri 08 jul 2016"
+                android:layout_marginBottom="4dp"/>
+
+            <LinearLayout
+                android:id="@+id/lin_grid_two"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_date"
+                android:background="@android:color/darker_gray"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/border_size"
+                android:paddingRight="@dimen/border_size">
+
+                <TextView
+                    android:text="ATP Singles Wimbledon England(2)"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="4dp" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:columnCount="7"
+                    app:rowCount="2">
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="12sp"
+                        android:text="SF\n17:00"
+                        app:layout_columnWeight="1"
+                        app:layout_rowSpan="2"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="Berdych T.(10)"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="3"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="3"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="12sp"
+                        android:text="3"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="12sp"
+                        android:text="Murray A.(2)"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="6"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="6"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="6"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="12sp"
+                        android:text=" "
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_date2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin_grid_two"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Fri 09 jul 2016"
+                android:layout_marginBottom="4dp"/>
+
+            <LinearLayout
+                android:id="@+id/lin_grid_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/tv_date2"
+                android:background="@android:color/darker_gray"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/border_size"
+                android:paddingRight="@dimen/border_size">
+
+                <TextView
+                    android:text="ATP Singles Wimbledon England(2)"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="4dp" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:columnCount="7"
+                    app:rowCount="2">
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="QF\n16:00"
+                        app:layout_columnWeight="1"
+                        android:textSize="12sp"
+                        app:layout_rowSpan="2"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="12sp"
+                        android:text="Tosonga J-W.(10)"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="3"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="3"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="3"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:textSize="12sp"
+                        android:text="Murray A.(2)"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="6"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="6"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="6"
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                    <TextView
+                        style="@style/CellStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=" "
+                        android:textSize="12sp"
+                        app:layout_columnWeight="1"
+                        app:layout_rowWeight="1" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/close"
+        android:gravity="right|top"
+        android:translationZ="2dp" />
+
+</FrameLayout>

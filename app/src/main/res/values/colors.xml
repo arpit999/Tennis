@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D4F061</color>
+    <color name="colorPrimaryDark">#AAD726</color>
+    <color name="colorAccent">#ECFBB7</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#1C2641</color>
+    <color name="black_light">#e48a8a8b</color>
+    <color name="black_dark">#E3595658</color>
+    <color name="grgeen">#91CC04</color>
+    <color name="green_dark">#1B5E20</color>
+    <color name="background">#fff3f3f3</color>
+
+    <!--Live score screen color-->
+    <color name="playerone_dark">#F1F1F1</color>
+    <color name="live_middle_light">#F7F7F7</color>
+
+</resources>
